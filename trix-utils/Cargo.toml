@@ -1,0 +1,29 @@
+[package]
+name = "trix-utils"
+version = "0.1.0"
+edition = "2021"
+authors = ["Roland Schmid <roschmi@ethz.ch>"]
+
+[lib]
+name = "trix_utils"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[dependencies]
+bgpsim = { version = "0.17.3", features = ["export", "topology_zoo", "rand"] }
+router-lab = { git = "https://github.com/nsg-ethz/router-lab", tag = "0.8.0" }
+clap = { version = "4.4.18", features = ["derive"] }
+csv = "1.1.6"
+ipnet = "2.7.1"
+itertools = "0.10.3"
+log = "0.4.17"
+pcap-file = "2.0.0"
+pnet = "0.33.0"
+pnet_packet = "0.33.0"
+pretty_env_logger = "0.4.0"
+rayon = "1.7.0"
+serde = {version = "1.0.152", features = ["derive"] }
+serde_json = "1.0.94"
+time = {version = "0.3.17", features = ["formatting", "local-offset"] }

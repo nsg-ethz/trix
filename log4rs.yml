@@ -1,0 +1,132 @@
+# Scan this file for changes every 30 seconds
+refresh_rate: 30 seconds
+
+appenders:
+  # An appender named "stdout" that writes to stdout
+  stdout:
+    kind: console
+    target: stdout
+    encoder:
+      pattern: "[{d(%H:%M:%S)}] {h({l:<5} {M}:{L}):<42}  > {m}{n}"
+
+  # An appender named "bgpseer" that writes to a file with a custom pattern encoder
+  logfile:
+    kind: rolling_file
+    path: "logs/bgpseer.log"
+    append: true
+    policy:
+      kind: compound
+      trigger:
+        kind: size
+        limit: 1gb
+      roller:
+        kind: fixed_window
+        base: 1
+        count: 5
+        pattern: "logs/bgpseer.{}.log"
+    encoder:
+      pattern: "[{d(%Y-%m-%d %H:%M:%S)}] {h({l:<5} {M}:{L}):<42}  > {m}{n}"
+
+  logfile_processing:
+    kind: rolling_file
+    path: "logs/processing.log"
+    append: true
+    policy:
+      kind: compound
+      trigger:
+        kind: size
+        limit: 1gb
+      roller:
+        kind: fixed_window
+        base: 1
+        count: 5
+        pattern: "logs/processing.{}.log"
+    encoder:
+      pattern: "[{d(%Y-%m-%d %H:%M:%S)}] {h({l:<5} {M}:{L}):<42}  > {m}{n}"
+
+  logfile_extraction:
+    kind: rolling_file
+    path: "logs/extraction.log"
+    append: true
+    policy:
+      kind: compound
+      trigger:
+        kind: size
+        limit: 1gb
+      roller:
+        kind: fixed_window
+        base: 1
+        count: 5
+        pattern: "logs/extraction.{}.log"
+    encoder:
+      pattern: "[{d(%Y-%m-%d %H:%M:%S)}] {h({l:<5} {M}:{L}):<42}  > {m}{n}"
+
+# Set the default logging level to "info" and attach the "stdout" appender to the root
+root:
+  level: info
+  appenders:
+    - stdout
+
+loggers:
+  # Raise the maximum log level for events sent to the "app::backend::db" logger to "info"
+  app::backend::db:
+    level: info
+
+  # Route log events sent to the different loggers to the "logfile" appender
+  bgpsim:
+    level: info
+    appenders:
+      - logfile
+    additive: true
+
+  router_lab:
+    level: info
+    appenders:
+      - logfile
+    additive: true
+
+  bgpseer:
+    level: debug
+    appenders:
+      - logfile
+    additive: true
+
+  bgpseer::transient_specification:
+      level: info
+
+  trix_utils:
+    level: debug
+    appenders:
+      - logfile
+    additive: true
+
+  main:
+    level: debug
+    appenders:
+      - logfile
+    additive: true
+
+  collect_hw_data:
+    level: debug
+    appenders:
+      - logfile
+    additive: true
+
+  process_pcaps:
+    level: debug
+    appenders:
+      - logfile_processing
+    additive: true
+
+  extract_bgp_updates:
+    level: info
+    appenders:
+      - logfile_extraction
+    additive: true
+
+  evaluate:
+    level: debug
+
+  plot:
+    level: debug
+    additive: true

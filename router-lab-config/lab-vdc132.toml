@@ -1,0 +1,8 @@
+ssh_name = "lab-vdc132"
+mgnt_addr = "172.16.100.132"
+ifaces = [
+  ["Ethernet7/25", 0xdead00840719, "14/0", 16],
+  ["Ethernet7/26", 0xdead0084071a, "14/1", 17],
+  ["Ethernet7/27", 0xdead0084071b, "14/2", 18],
+  ["Ethernet7/28", 0xdead0084071c, "14/3", 19],
+]

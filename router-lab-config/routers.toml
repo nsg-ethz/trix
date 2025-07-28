@@ -1,0 +1,33 @@
+vdcs = [
+# "lab-vdc111",
+# "lab-vdc112",
+# "lab-vdc113",
+# "lab-vdc114",
+# "lab-vdc121",
+# "lab-vdc122",
+# "lab-vdc123",
+# "lab-vdc124",
+# "lab-vdc131",
+# "lab-vdc132",
+# "lab-vdc133",
+# "lab-vdc134",
+  "cisco-nexus1",
+  "cisco-nexus2",
+  "cisco-nexus3",
+  "cisco-nexus4",
+  "cisco-nexus5",
+  "cisco-nexus6",
+  "cisco-nexus7",
+  "cisco-nexus8",
+  "cisco-nexus9",
+  "cisco-nexus10",
+  "cisco-nexus11",
+  "cisco-nexus12",
+# "cisco-nexus13",
+]
+
+routers = [
+# "lab-router1",
+# "lab-router2",
+# "lab-router3",
+]

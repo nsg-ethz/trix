@@ -1,0 +1,10 @@
+ssh_name = "cisco-nexus6"
+mgnt_addr = "172.16.100.206"
+ifaces = [
+  ["Ethernet1/49", 0xdead00ce0131, "16/0", 0],
+  ["Ethernet1/50", 0xdead00ce0132, "16/1", 1],
+  ["Ethernet1/51", 0xdead00ce0133, "16/2", 2],
+  ["Ethernet1/52", 0xdead00ce0134, "16/3", 3],
+  ["Ethernet1/53", 0xdead00ce0135, "2/2", 142],
+  ["Ethernet1/54", 0xdead00ce0136, "2/3", 143],
+]

@@ -1,0 +1,4 @@
+execution_timestamp,execution_duration,event_start,prober_result_filename,pcap_filename,capture_frequency,hardware_mapping_filename,packets_dropped
+2024-09-12_14-24-06,63.077536051,1726151061.7954228,prober_results_2024-09-12_14-24-06.json,pcap_2024-09-12_14-24-06.pcap.gz,1000,hardware_mapping_2024-09-12_14-24-06.json,0
+2024-09-12_14-25-42,64.719362362,1726151157.7961493,prober_results_2024-09-12_14-25-42.json,pcap_2024-09-12_14-25-42.pcap.gz,1000,hardware_mapping_2024-09-12_14-25-42.json,0
+2024-09-12_14-27-19,61.847141259,1726151253.7979505,prober_results_2024-09-12_14-27-19.json,pcap_2024-09-12_14-27-19.pcap.gz,1000,hardware_mapping_2024-09-12_14-27-19.json,0
